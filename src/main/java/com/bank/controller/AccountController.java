@@ -62,7 +62,7 @@ public class AccountController {
         } else {
             response.setMessage("Sorry! you don't have sufficient amount to withdraw");
             response.setSuccess(false);
-            return new ResponseEntity<>(response, HttpStatus.BAD);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
 
     }
