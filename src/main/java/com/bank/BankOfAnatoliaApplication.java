@@ -25,8 +25,7 @@ class DemoCommandLineRunner implements CommandLineRunner {
 	@Autowired
 	private RoleRepo roleRepo;
 
-	@Autowired
-	private UserRepo userRepo;
+
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -38,8 +37,6 @@ class DemoCommandLineRunner implements CommandLineRunner {
 		roleUser.setName("USER");
 		roleRepo.save(roleUser);
 
-		User user1 = new  User("canan","123456", "Canan", "OZ","c@gmail.com");
-		userRepo.save(user1);
 
 	}
 }
