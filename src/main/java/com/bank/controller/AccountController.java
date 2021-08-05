@@ -38,14 +38,13 @@ public class AccountController {
             response.setSuccess(true);
             UserDAO userDAO = userService.getUserDAOByName(user.getUsername());
             response.setUser(userDAO);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         }else{
             response.setMessage("Amount should be bigger than 0");
             response.setSuccess(false);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-
 
     @PostMapping("/withdraw")
     public ResponseEntity<TransactionResponse> withdraw (@Valid @RequestBody TransactionRequest transactionRequest){
@@ -59,11 +58,13 @@ public class AccountController {
         response.setSuccess(true);
         UserDAO userDAO = userService.getUserDAOByName(user.getUsername());
         response.setUser(userDAO);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
             response.setMessage("Sorry! you don't have sufficient amount to withdraw");
             response.setSuccess(false);
+            return new ResponseEntity<>(response, HttpStatus.BAD);
         }
-        return new ResponseEntity<>(response, HttpStatus.OK);
+
     }
 
     @PostMapping("/transfer")
@@ -78,12 +79,12 @@ public class AccountController {
         response.setSuccess(true);
         UserDAO userDAO = userService.getUserDAOByName(user.getUsername());
         response.setUser(userDAO);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
             response.setMessage("Amount is not  sufficient");
             response.setSuccess(false);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
-
-        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/addRecipient")
