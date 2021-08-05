@@ -63,12 +63,12 @@ public class LoginController {
         if(userRepo.existsByUsername(signUpForm.getUsername())){
             response.setMessage("Error: Username is already taken");
             response.setSuccess(false);
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
         if(userRepo.existsByEmail(signUpForm.getEmail())){
             response.setMessage("Error: Email is already taken");
             response.setSuccess(false);
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
         //Create a new user
          User user = new User(

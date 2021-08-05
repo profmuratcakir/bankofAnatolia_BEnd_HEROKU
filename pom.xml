@@ -93,6 +93,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>bankofanatolia</finalName>
 	</build>
 
 </project>
