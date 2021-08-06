@@ -28,7 +28,7 @@ import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "https://www.htrbank.com", allowedHeaders = "*")
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
