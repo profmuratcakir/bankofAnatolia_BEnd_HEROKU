@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class BankOfAnatoliaApplication {
@@ -29,16 +30,14 @@ class DemoCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Role> roles = (List<Role>) roleRepo.findAll();
-		Boolean adminExist =  roles.stream().filter( t -> t.equals("ADMIN")).findAny().isPresent();
-		Boolean userExist =  roles.stream().filter( t -> t.equals("USER")).findAny().isPresent();
-
-		if(!adminExist){
+		Optional<Role> admin =  roleRepo.findByName("ADMIN");
+		Optional<Role> user =  roleRepo.findByName("USER");
+		if(!admin.isPresent()){
 			Role roleAdmin = new Role();
 			roleAdmin.setName("ADMIN");
 			roleRepo.save(roleAdmin);
 		}
-		if(!userExist){
+		if(!user.isPresent()){
 			Role roleUser = new Role();
 			roleUser.setName("USER");
 			roleRepo.save(roleUser);
