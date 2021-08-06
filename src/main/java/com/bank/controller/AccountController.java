@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "https://www.htrbank.com", allowedHeaders = "*")
 @RestController
 @RequestMapping("/account")
 public class AccountController {
