@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "https://htrbank.com", allowedHeaders = "*")
 @RestController
 @RequestMapping("/user")
 public class UserController {
