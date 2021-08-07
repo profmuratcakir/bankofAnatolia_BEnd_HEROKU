@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = {"https://www.htrbank.com", "https://bankofanatolia.netlify.app"}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/user")
 public class UserController {
