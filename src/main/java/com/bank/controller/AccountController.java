@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "https://htrbank.com", allowedHeaders = "*")
+@CrossOrigin(origins = {"https://www.htrbank.com", "https://bankofanatolia.netlify.app"} , allowedHeaders = "*")
 @RestController
 @RequestMapping("/account")
 public class AccountController {

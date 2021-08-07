@@ -28,7 +28,7 @@ import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
-@CrossOrigin(origins = "https://htrbank.com", allowedHeaders = "*")
+@CrossOrigin(origins = {"https://www.htrbank.com", "https://bankofanatolia.netlify.app"}, allowedHeaders = "*")
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
