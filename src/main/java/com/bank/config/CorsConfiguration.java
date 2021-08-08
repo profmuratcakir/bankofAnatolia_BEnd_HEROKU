@@ -11,8 +11,7 @@ public class CorsConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").
-                allowedOrigins("https://www.htrbank.com").
+                allowedOrigins("https://www.htrbank.com").allowedHeaders("*").
                 allowedOrigins("https://bankofanatolia.netlify.app").allowedHeaders("*");
     }
-
 }
