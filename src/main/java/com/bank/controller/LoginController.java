@@ -28,7 +28,7 @@ import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("/auth")
 public class LoginController {
